@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,24 +60,22 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        widget: {
-          DEFAULT: "hsl(var(--widget-bg))",
-          surface: "hsl(var(--widget-surface))",
-          border: "hsl(var(--widget-border))",
-          glow: "hsl(var(--widget-glow))",
+        embark: {
+          DEFAULT: "hsl(var(--embark-bg))",
+          surface: "hsl(var(--embark-surface))",
+          border: "hsl(var(--embark-border))",
+          purple: "hsl(var(--embark-purple))",
+          "purple-hover": "hsl(var(--embark-purple-hover))",
+          "text-primary": "hsl(var(--embark-text-primary))",
+          "text-secondary": "hsl(var(--embark-text-secondary))",
         },
-        "career-highlight": "hsl(var(--career-highlight))",
-      },
-      backgroundImage: {
-        "gradient-primary": "var(--gradient-primary)",
-        "gradient-surface": "var(--gradient-surface)",
       },
       boxShadow: {
-        glow: "var(--shadow-glow)",
-        widget: "var(--shadow-widget)",
+        embark: "var(--shadow-embark)",
+        "embark-lg": "var(--shadow-embark-lg)",
       },
       transitionTimingFunction: {
-        smooth: "var(--transition-smooth)",
+        embark: "var(--transition-embark)",
       },
       borderRadius: {
         lg: "var(--radius)",

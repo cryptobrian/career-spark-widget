@@ -4,7 +4,7 @@ import { Shuffle, Sparkles } from 'lucide-react';
 import { canadianCareers } from '@/data/careers';
 
 const CareerGeneratorWidget = () => {
-  const [currentCareer, setCurrentCareer] = useState<string>('Click to discover your career!');
+  const [currentCareer, setCurrentCareer] = useState<string>('');
   const [isGenerating, setIsGenerating] = useState(false);
 
   const generateRandomCareer = () => {
@@ -15,58 +15,58 @@ const CareerGeneratorWidget = () => {
       const randomIndex = Math.floor(Math.random() * canadianCareers.length);
       setCurrentCareer(canadianCareers[randomIndex]);
       setIsGenerating(false);
-    }, 500);
+    }, 400);
   };
 
   return (
-    <div className="bg-gradient-surface border border-widget-border rounded-2xl p-8 shadow-widget backdrop-blur-sm max-w-2xl mx-auto">
-      <div className="text-center mb-6">
-        <div className="flex items-center justify-center gap-2 mb-2">
-          <Sparkles className="h-6 w-6 text-widget-glow" />
-          <h2 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+    <div className="bg-embark-surface border border-embark-border rounded-2xl p-8 shadow-embark-lg max-w-3xl mx-auto font-inter">
+      <div className="text-center mb-8">
+        <div className="flex items-center justify-center gap-3 mb-3">
+          <Sparkles className="h-7 w-7 text-embark-purple" />
+          <h2 className="text-3xl font-bold text-embark-text-primary">
             Career Generator
           </h2>
-          <Sparkles className="h-6 w-6 text-widget-glow" />
+          <Sparkles className="h-7 w-7 text-embark-purple" />
         </div>
-        <p className="text-muted-foreground text-sm">
+        <p className="text-embark-text-secondary text-lg">
           Discover random careers from Canada's top 200 professions
         </p>
       </div>
 
-      <div className="flex items-center gap-6 justify-center">
+      <div className="flex flex-col lg:flex-row items-center gap-8 justify-center">
         <Button
           onClick={generateRandomCareer}
           disabled={isGenerating}
-          className="group bg-gradient-primary hover:shadow-glow text-primary-foreground px-8 py-3 h-auto font-semibold text-lg transition-all duration-300 hover:scale-105 disabled:hover:scale-100"
+          className="bg-embark-purple hover:bg-embark-purple-hover text-white px-10 py-4 h-auto font-semibold text-lg rounded-xl shadow-embark transition-embark hover:shadow-embark-lg disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          <Shuffle className={`mr-2 h-5 w-5 transition-transform duration-500 ${
-            isGenerating ? 'rotate-180' : 'group-hover:rotate-12'
+          <Shuffle className={`mr-3 h-6 w-6 transition-transform duration-300 ${
+            isGenerating ? 'animate-spin' : ''
           }`} />
           {isGenerating ? 'Generating...' : 'Generate Career'}
         </Button>
 
-        <div className="flex-1 max-w-md">
-          <div className="bg-widget-surface/50 border border-widget-border rounded-xl p-4 min-h-[60px] flex items-center">
-            <p className={`text-lg font-medium transition-all duration-500 ${
-              isGenerating 
-                ? 'text-muted-foreground animate-pulse' 
-                : currentCareer === 'Click to discover your career!'
-                  ? 'text-muted-foreground'
-                  : 'text-career-highlight'
-            }`}>
-              {isGenerating ? 'Discovering your next career...' : currentCareer}
-            </p>
+        <div className="flex-1 w-full max-w-lg">
+          <div className="bg-embark border border-embark-border rounded-xl p-6 min-h-[80px] flex items-center shadow-embark">
+            {currentCareer ? (
+              <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
+                <p className="text-2xl font-semibold text-embark-text-primary mb-1">
+                  {currentCareer}
+                </p>
+                <p className="text-sm text-embark-text-secondary">
+                  🇨🇦 Top Canadian career opportunity
+                </p>
+              </div>
+            ) : (
+              <p className="text-lg text-embark-text-secondary text-center w-full">
+                {isGenerating 
+                  ? <span className="animate-pulse">Discovering your next career...</span>
+                  : 'Click the button to discover a career!'
+                }
+              </p>
+            )}
           </div>
         </div>
       </div>
-
-      {currentCareer !== 'Click to discover your career!' && !isGenerating && (
-        <div className="mt-6 text-center animate-in fade-in slide-in-from-bottom-2 duration-500">
-          <p className="text-sm text-muted-foreground">
-            🇨🇦 One of Canada's top career opportunities
-          </p>
-        </div>
-      )}
     </div>
   );
 };

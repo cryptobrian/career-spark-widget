@@ -8,51 +8,51 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    /* Embark-inspired color palette */
+    --background: 210 20% 98%;
+    --foreground: 222 84% 5%;
 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 5%;
 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 5%;
 
-    --primary: 263 70% 65%;
-    --primary-foreground: 240 10% 3.9%;
+    /* Embark's signature purple */
+    --primary: 248 66% 63%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 210 40% 95%;
+    --secondary-foreground: 222 84% 5%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 12 76% 61%;
-    --accent-foreground: 240 10% 3.9%;
+    --accent: 210 40% 95%;
+    --accent-foreground: 222 84% 5%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 263 70% 65%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 248 66% 63%;
 
-    /* Widget specific colors */
-    --widget-bg: 240 10% 6%;
-    --widget-surface: 240 8% 12%;
-    --widget-border: 240 6% 20%;
-    --widget-glow: 263 70% 65%;
-    --career-highlight: 12 76% 61%;
+    /* Embark widget styling */
+    --embark-bg: 210 20% 98%;
+    --embark-surface: 0 0% 100%;
+    --embark-border: 214 32% 91%;
+    --embark-purple: 248 66% 63%;
+    --embark-purple-hover: 248 66% 58%;
+    --embark-text-primary: 222 84% 5%;
+    --embark-text-secondary: 215 16% 47%;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(263, 70%, 65%), hsl(12, 76%, 61%));
-    --gradient-surface: linear-gradient(145deg, hsl(240, 8%, 12%), hsl(240, 6%, 8%));
+    /* Embark shadows */
+    --shadow-embark: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-embark-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     
-    /* Shadows */
-    --shadow-glow: 0 0 30px hsl(263 70% 65% / 0.3);
-    --shadow-widget: 0 8px 32px hsl(240 10% 3% / 0.4);
-    
-    /* Animation */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Transitions */
+    --transition-embark: all 0.15s ease-in-out;
 
     --radius: 0.5rem;
 
