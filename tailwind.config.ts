@@ -57,6 +57,24 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        widget: {
+          DEFAULT: "hsl(var(--widget-bg))",
+          surface: "hsl(var(--widget-surface))",
+          border: "hsl(var(--widget-border))",
+          glow: "hsl(var(--widget-glow))",
+        },
+        "career-highlight": "hsl(var(--career-highlight))",
+      },
+      backgroundImage: {
+        "gradient-primary": "var(--gradient-primary)",
+        "gradient-surface": "var(--gradient-surface)",
+      },
+      boxShadow: {
+        glow: "var(--shadow-glow)",
+        widget: "var(--shadow-widget)",
+      },
+      transitionTimingFunction: {
+        smooth: "var(--transition-smooth)",
       },
       borderRadius: {
         lg: "var(--radius)",
